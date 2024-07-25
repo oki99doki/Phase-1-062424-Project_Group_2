@@ -40,6 +40,7 @@ Phase 2 - Week 6 Group Project - Group 1
 
 ## A component diagram detailing the purpose of each component (at least five components)
 - [ ] to be added (link)
+- [ ] ![image](/assets/Component_Diagram.png)
       
 
 ## DB.JSON
@@ -62,3 +63,4 @@ Phase 2 - Week 6 Group Project - Group 1
 ## Kanban Board
 - [ ] Link to Trello to be added
 - [ ] Screenshot image to be added
+- [ ] ![image](/assets/KANBAN_Board.png)
