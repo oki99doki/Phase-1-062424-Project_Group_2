@@ -20,9 +20,9 @@ Phase 2 - Week 6 Group Project - Group 1
 
 ## Wireframe Screenshot
 - [ ] to be added (link)
-- [ ] ![image](/assets/wireframe_project_2.jpg)
-- [ ] ![image](/assets/New_Dest_Route.png)
-- [ ] ![image](/assets/Favorite_route.png)
+- [ ] ![image](/assets/wireframe_project_2.JPG)
+- [ ] ![image](/assets/New_Dest_Route.JPG)
+- [ ] ![image](/assets/Favorite_route.JPG)
 
 
 ## Deliverables (User Stories)
