@@ -1,7 +1,6 @@
 # Phase-2-062424-Project_Group_1
 Phase 2 - Week 6 Group Project - Group 1
 
-# SE-EAST-Phase-2-062424
 ## Project Requirements
 - [ ] A one sentence description of your app
 - [ ] A simple wireframe of your site (A SCREENSHOT of your wireframe)
