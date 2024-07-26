@@ -15,7 +15,7 @@ Phase 2 - Week 6 Group Project - Group 1
 
 
 ## Project Requirements (One Sentence Description)
-- [ ] An app to ...
+- [ ] An app where users can search for popular destinations and share their favorite places.
 
 
 ## Wireframe Screenshot
@@ -37,8 +37,8 @@ Phase 2 - Week 6 Group Project - Group 1
 
 
 ## What three or more React Router routes you will be using and what components they will be used for (include any params)
-- [ ]  ...
-- [ ]  ...
+![image](https://github.com/user-attachments/assets/d6304df3-d8aa-44c8-8c8f-0e46acdd97b1)
+
 
 
 ## A component diagram detailing the purpose of each component (at least five components)
@@ -47,16 +47,27 @@ Phase 2 - Week 6 Group Project - Group 1
       
 
 ## DB.JSON
-  {
-    "apis": [
-      {
-        
-      },
-      {
-        
-      },
-    ]
-  }
+Example below:
+ {
+    "places": [
+    {
+        "id": 1,
+        "country-name": "Japan",
+        "city-name": "Tokyo",
+        "image": "https://media.nomadicmatt.com/2024/tokyothings.jpeg"
+    },
+    {
+        "id": 2,
+        "country-name": "Thailand",
+        "city-name": "Phucket",
+        "image": "https://touringhighlights.com/wp-content/uploads/2020/09/Phang-Nga-Bay-Phuket-Thailand.jpg"
+    },
+    {
+        "id": 3,
+        "country-name": "Australia",
+        "city-name": "Brisbane",
+        "image": "https://content.r9cdn.net/rimg/dimg/97/d4/1dc3de6e-city-27249-163f5014ee8.jpg?crop=true&width=1020&height=498"
+    },
 
 
 ## Three Stretch Goals
