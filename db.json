@@ -212,15 +212,15 @@
     },
     {
         "id": 36,
-        "country-name": "Netherlands",
-        "city-name": "Amsterdam",
-        "image": "https://www.carnival.com/awaywego/wp-content/uploads/2020/01/the-island-of-procida-in-naples-italy.jpg"
+        "country-name": "Costa Rica",
+        "city-name": "San Jose",
+        "image": "https://web-assets.bcg.com/dims4/default/d06b0df/2147483647/strip/true/crop/1427x749+286+0/resize/1200x630!/format/webp/quality/90/?url=http%3A%2F%2Fboston-consulting-group-brightspot.s3.amazonaws.com%2F1d%2Fe4%2F0ab535014b4886af9104d0a78cbb%2Fbcg-san-jose-costa-rica.jpg"
     },
     {
         "id": 37,
-        "country-name": "Netherlands",
-        "city-name": "Amsterdam",
-        "image": "https://media.cnn.com/api/v1/images/stellar/prod/190315131613-07-netherlands-happiest-coutries-2018.jpg?q=x_3,y_131,h_1684,w_2993,c_crop/w_1280"
+        "country-name": "Guatemala",
+        "city-name": "Antigua",
+        "image": "https://lp-cms-production.imgix.net/2022-03/shutterstockRF_455082646.jpg"
     },
     {
         "id": 38,
@@ -299,6 +299,12 @@
         "country-name": "Belize",
         "city-name": "Hopkins",
         "image": "https://images.squarespace-cdn.com/content/v1/5a0ca9eacd39c332554b072b/1548777821459-QJTWXQKIJ5VSR6G9JVOJ/FN_belize_hopkinsbay-011.jpg"
+    },
+    {
+        "id": 51,
+        "country-name": "USA",
+        "city-name": "Detroit",
+        "image": "https://www.michigan.org/sites/default/files/styles/large/public/2022-04/dtw_22_ss_camp_Week1_Visit_Detroit_Growing_Skyline_S_Ferguson.jpg?itok=9-3lMdtM"
     }
     ]
 }
