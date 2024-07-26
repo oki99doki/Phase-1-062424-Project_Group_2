@@ -7,11 +7,11 @@ const [places, SetPlaces] = useState([])
 useEffect(() => {
     fetch('http://localhost:4000/places')
     .then(res => res.json())
-    .then(data => setTopFive(data))
+    .then(data => SetPlaces(data))
   }, [])
 
 return (
-    
+
 )
 
 
