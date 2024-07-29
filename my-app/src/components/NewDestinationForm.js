@@ -8,6 +8,7 @@ function NewDestinationForm({ addDestination }) {
 		"country-name": "",
 		"city-name": "",
 		image: "",
+		"false":
 	});
 
 	const handleChange = (e) => {
@@ -19,10 +20,10 @@ function NewDestinationForm({ addDestination }) {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		fetch("http://localhost:6001/plants", {
+		fetch("http://localhost:4000", {
 			method: "POST",
 			headers: { "content-type": "application/json" },
-			body: JSON.stringify({ ...form, price: parseInt(form.price) }),
+			body: JSON.stringify({ ...form }),
 		})
       .then(res => {
         if(res.ok){
