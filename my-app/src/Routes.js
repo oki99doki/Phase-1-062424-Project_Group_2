@@ -1,4 +1,6 @@
 import App from "./App";
+import HomePage from "./compoenents/HomePage";
+import FavoritePage from "./compoents/FavoritePage";
 
 
 
