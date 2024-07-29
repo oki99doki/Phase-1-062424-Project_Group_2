@@ -8,7 +8,7 @@ function NewDestinationForm({ addDestination }) {
 		"country-name": "",
 		"city-name": "",
 		image: "",
-		"false":
+		"false": ""
 	});
 
 	const handleChange = (e) => {
@@ -20,7 +20,7 @@ function NewDestinationForm({ addDestination }) {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		fetch("http://localhost:4000", {
+		fetch("http://localhost:4000/places", {
 			method: "POST",
 			headers: { "content-type": "application/json" },
 			body: JSON.stringify({ ...form }),
@@ -60,6 +60,13 @@ function NewDestinationForm({ addDestination }) {
 					type="text"
 					name="image"
 					placeholder="Image URL"
+				/>
+				<input
+					onChange={(e) => handleChange(e)}
+					value={form["false"]}
+					type="text"
+					name="Favorite"
+					placeholder="False"
 				/>
 				<button type="submit">Add Destination</button>
 			</form>
