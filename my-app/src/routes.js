@@ -1,15 +1,13 @@
-import App from "./App";
-import HomePage from "./compoenents/HomePage";
-import FavoritePage from "./compoents/FavoritePage";
-
-
+import App from './App'
+import HomePage from './components/HomePage'
+import FavoritePage from './components/FavoritePage';
 
 
 const routes = [
     {
     path: "/",
     element: <App />,
-    children: {
+    children: [{
         path: "/",
         element: <HomePage />
     },
@@ -20,7 +18,7 @@ const routes = [
     {
         path: "/NewDestination",
         element: <newDestination />
-    }
+    }]
     }
 ];
 

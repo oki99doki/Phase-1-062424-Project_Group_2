@@ -1,4 +1,4 @@
-import { Outlet } from 'react-route-dom'
+import { Outlet } from 'react-router-dom'
 
 function App() {
 
@@ -15,5 +15,5 @@ function App() {
         </div>
     );
 }
+export default App;
 
-export default App; 
