@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Header from "./Header";
-import FavoriteForm from "./FavoriteForm";
 import FavoritePage from "./FavoritePage;"
 import NewDestinationForm from "./NewDestinationForm";
 import CityList from "./CityList";
@@ -22,10 +21,23 @@ useEffect(() => {
     .then(data => setDestination(data))
     .catch((err) => console.error("couldnt reach server"));
   }, [])
-  
+
+
   const addPlaces = (newPlaces) => {
     setSearchplaces([...destinations, newPlaces])
   };
+
+  //create cb fxn for citycards to render on FavPage
+  function favoritedCity(updateFavCity) {
+    const updateFavCityArray = destination.map((destination) => {
+      if(destination.id === updateFavCity.id){
+        return updateFavCity;
+      }else {
+        return destination
+      }
+    });
+    setDestination(updateFavCityArray) 
+  }
 
 
 
@@ -39,10 +51,9 @@ return (
   <h1> HomePage </h1>
 
   <div>
-  <FavoriteForm addPlaces={addPlaces}/> 
-  <FavoritePage destinations={destinations}
-  <NewDestinationForm addPlaces={addPlaces}/>
-  <Search setSearch={setSearchplaces}/>
+  <FavoritePage destinations={destinations} />
+  // <NewDestinationForm addPlaces={addPlaces}/>
+  // <Search setSearch={setSearchplaces}/>
   {/* <CityList destinations={destinations}/> */}
   </div>
 
