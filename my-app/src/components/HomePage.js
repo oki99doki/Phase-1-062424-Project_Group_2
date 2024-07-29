@@ -37,7 +37,7 @@ return (
   </div>
 
   {
-  destinations.map(destination => <CityList key={id} destination={destination} />)
+  destinations.map(destination => <CityList key={destination.id} destination={destination} />)
   }
   
   </>
