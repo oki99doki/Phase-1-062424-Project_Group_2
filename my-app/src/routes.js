@@ -1,6 +1,7 @@
 import App from './App'
 import HomePage from './components/HomePage'
 import FavoritePage from './components/FavoritePage';
+import NewDestination from './components/NewDestination'
 
 
 const routes = [
@@ -17,7 +18,7 @@ const routes = [
     },
     {
         path: "/NewDestination",
-        element: <newDestination />
+        element: <NewDestination />
     }]
     }
 ];

@@ -1,6 +1,7 @@
 
 
-function FavoriteForm() {
+function FavoriteForm( {}) {
+
 
 
 
