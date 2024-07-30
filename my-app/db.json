@@ -5,14 +5,14 @@
       "country-name": "Japan",
       "city-name": "Tokyo",
       "image": "https://media.nomadicmatt.com/2024/tokyothings.jpeg",
-      "favorite": "false"
+      "favorite": false
     },
     {
       "id": 2,
       "country-name": "Thailand",
       "city-name": "Phucket",
       "image": "https://touringhighlights.com/wp-content/uploads/2020/09/Phang-Nga-Bay-Phuket-Thailand.jpg",
-      "favorite": "false"
+      "favorite": false
     },
     {
       "id": 3,

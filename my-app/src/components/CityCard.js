@@ -18,7 +18,6 @@ function CityCard({ destination, updateFavorite}) {
           return res.json();
         } else {
           throw Error("patch failed");
-          
         }
       })
       .then((data) => {
