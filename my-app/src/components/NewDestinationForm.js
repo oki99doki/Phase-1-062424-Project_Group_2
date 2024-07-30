@@ -7,8 +7,8 @@ function NewDestinationForm({ addDestination }) {
 	const [form, setForm] = useState({
 		"country-name": "",
 		"city-name": "",
-		image: "",
-		"false":
+		"image": "",
+		"favorite": false
 	});
 
 	const handleChange = (e) => {

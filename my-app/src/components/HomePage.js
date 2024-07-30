@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import Header from "./Header";
-import FavoritePage from "./FavoritePage;"
+import FavoritePage from "./FavoritePage";
 import NewDestinationForm from "./NewDestinationForm";
 import CityList from "./CityList";
 
 function HomePage() {
 
-const [destinations, setDestination] = useState([])
-const [searchPlaces, setSearchplaces] = useState("")
+const [destinations, setDestination] = useState([]);
+const [searchPlaces, setSearchplaces] = useState("");
+const [favorites, setFavorites] = useState([]);
 
 useEffect(() => {
     fetch('http://localhost:4000/places')
@@ -28,18 +29,16 @@ useEffect(() => {
   };
 
   //create cb fxn for citycards to render on FavPage
-  function favoritedCity(updateFavCity) {
-    const updateFavCityArray = destination.map((destination) => {
-      if(destination.id === updateFavCity.id){
-        return updateFavCity;
-      }else {
-        return destination
-      }
-    });
-    setDestination(updateFavCityArray) 
-  }
-
-
+  // function favoritedCity(updateFavCity) {
+  //   const updateFavCityArray = destinations.map((destination) => {
+  //     if(destination.id === updateFavCity.id){
+  //       return updateFavCity;
+  //     }else {
+  //       return destination
+  //     }
+  //   });
+  //   setDestination(updateFavCityArray) 
+  // }
 
 
 return (
@@ -51,10 +50,10 @@ return (
   <h1> HomePage </h1>
 
   <div>
-  <FavoritePage destinations={destinations} />
+  {/* <FavoritePage favorites={favorites} destinations={destinations} onFavoriteCity={favoritedCity} /> */}
   // <NewDestinationForm addPlaces={addPlaces}/>
-  // <Search setSearch={setSearchplaces}/>
-  {/* <CityList destinations={destinations}/> */}
+  {/* // <Search setSearch={setSearchplaces}/> */}
+  {/* <CityList destinations={destinations} onFavoriteCity={favoritedCity} /> */}
   </div>
 
   {
