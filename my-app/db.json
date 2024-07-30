@@ -5,14 +5,14 @@
       "country-name": "Japan",
       "city-name": "Tokyo",
       "image": "https://media.nomadicmatt.com/2024/tokyothings.jpeg",
-      "favorite": "false"
+      "favorite": false
     },
     {
       "id": "2",
       "country-name": "Thailand",
       "city-name": "Phucket",
       "image": "https://touringhighlights.com/wp-content/uploads/2020/09/Phang-Nga-Bay-Phuket-Thailand.jpg",
-      "favorite": "false"
+      "favorite": false
     },
     {
       "id": "3",
@@ -349,69 +349,6 @@
       "city-name": "Detroit",
       "image": "https://www.michigan.org/sites/default/files/styles/large/public/2022-04/dtw_22_ss_camp_Week1_Visit_Detroit_Growing_Skyline_S_Ferguson.jpg?itok=9-3lMdtM",
       "favorite": "false"
-    },
-    {
-      "id": "5664",
-      "country-name": "China",
-      "city-name": "Hangzhou",
-      "image": "https://yingying.wordpress.ncsu.edu/files/2015/02/hangzhou7.jpg",
-      "favorite": "False"
-    },
-    {
-      "id": "14cc",
-      "country-name": "China",
-      "city-name": "Hangzhou",
-      "image": "https://yingying.wordpress.ncsu.edu/files/2015/02/hangzhou7.jpg",
-      "favorite": "False"
-    },
-    {
-      "id": "74d0",
-      "country-name": "China",
-      "city-name": "Hangzhou",
-      "image": "https://yingying.wordpress.ncsu.edu/files/2015/02/hangzhou7.jpg",
-      "favorite": "False"
-    },
-    {
-      "id": "951c",
-      "country-name": "China",
-      "city-name": "Hangzhou",
-      "image": "https://yingying.wordpress.ncsu.edu/files/2015/02/hangzhou7.jpg",
-      "favorite": "False"
-    },
-    {
-      "id": "0598",
-      "country-name": "China",
-      "city-name": "Hangzhou",
-      "image": "https://yingying.wordpress.ncsu.edu/files/2015/02/hangzhou7.jpg",
-      "favorite": "False"
-    },
-    {
-      "id": "7e08",
-      "country-name": "China",
-      "city-name": "Hangzhou",
-      "image": "https://yingying.wordpress.ncsu.edu/files/2015/02/hangzhou7.jpg",
-      "favorite": "False"
-    },
-    {
-      "id": "463e",
-      "country-name": "China",
-      "city-name": "Hangzhou",
-      "image": "https://yingying.wordpress.ncsu.edu/files/2015/02/hangzhou7.jpg",
-      "favorite": "False"
-    },
-    {
-      "id": "ab23",
-      "country-name": "China",
-      "city-name": "Hangzhou",
-      "image": "https://yingying.wordpress.ncsu.edu/files/2015/02/hangzhou7.jpg",
-      "favorite": "False"
-    },
-    {
-      "id": "a322",
-      "country-name": "China",
-      "city-name": "Hangzhou",
-      "image": "https://yingying.wordpress.ncsu.edu/files/2015/02/hangzhou7.jpg",
-      "favorite": "False"
     }
   ]
 }
