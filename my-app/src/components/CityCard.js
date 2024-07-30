@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
-function CityCard({ destination }) {
-  const [favorite, setFavorite] = useState(true);
+
+function CityCard({ destination, updateFavorite}) {
+  const [favorite, setFavorite] = useState(destination.favorite);
+
   const toggleFavorite = () => {
     setFavorite((prev) => !prev);
   };
-  
+
   useEffect(() => {
     fetch(`http://localhost:4000/places/${destination.id}`, {
       method: "PATCH",
@@ -19,14 +21,14 @@ function CityCard({ destination }) {
         }
       })
       .then((data) => {
-        console.log(data);
+        updateFavorite(data);
       })
       .catch((err) => console.error("couldnt reach server"));
   }, [favorite]);
-  return (
-    <>
 
-      <img src={destination.image}/>
+  return (
+    <li>
+      <img src={destination.image} />
       <h3>Country Name: {destination["country-name"]}</h3>
       <h4>City Name: {destination["city-name"]}</h4>
       {favorite ? (
@@ -36,7 +38,8 @@ function CityCard({ destination }) {
       ) : (
         <button onClick={toggleFavorite}>unfavorite</button>
       )}
-    </>
+    </li>
   );
 }
+
 export default CityCard;

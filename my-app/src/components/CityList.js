@@ -1,13 +1,15 @@
 import React from "react";
 import CityCard from "./CityCard";
 
-function CityList({ destination }) {
+
+function CityList({destination, updateFavorite}) {
+
 
 
     return(
         <>
             <div>
-                <CityCard destination={destination}/>
+                <CityCard destination={destination} updateFavorite={updateFavorite}/>
             </div>
         
         

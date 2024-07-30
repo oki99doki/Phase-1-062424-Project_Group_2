@@ -22,12 +22,21 @@ code {
 }
 
 img {
+<<<<<<< HEAD
   width: 1000px;
   height: 750px;
   /* margin-left: left;
   margin-right: left; */
   float:left;
   display:block;
+=======
+  width: 668px;
+  height: 450px;
+  /* margin-left: left;
+  margin-right: left; */
+  /* float:left; */
+  display:flex;
+>>>>>>> main
 }
 
 /* .text-container {

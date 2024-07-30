@@ -12,15 +12,15 @@ const [favorites, setFavorites] = useState([]);
 
 useEffect(() => {
     fetch('http://localhost:4000/places')
-    .then((res) => {
-        if (res.ok) {
-          return res.json();
-        } else {
-            throw Error("get went wrong");
-        }
+    .then(res => {
+      if(res.ok) {
+        return res.json()
+      } else {
+         throw Error ('Could not fetch the data from promise')
+      }
     })
     .then(data => setDestination(data))
-    .catch((err) => console.error("couldnt reach server"));
+    .catch(err => console.error('Was unable to reach the server for GET Request'))
   }, [])
 
 
@@ -32,21 +32,15 @@ useEffect(() => {
     setDestination([...destinations, newDestination])
   }
 
-      //create cb fxn for citycards to render on FavPage
-  function favoritedCity(updateFavCity) {
-    
-    const updateFavCityArray = destinations.map((destination) => {
-      if(destination.id === updateFavCity.id){
-        return updateFavCity;
-      }else {
-        return destination
+  function updateFavorite(updatedDestination) {
+    setDestination(destinations.map(prevDestination => {
+      if (updatedDestination.id === prevDestination.id) {
+        return { ...prevDestination, favorite: updatedDestination.favorite };
+      } else {
+        return prevDestination;
       }
-    });
-    setDestination(updateFavCityArray) 
-    }
-
-
-
+    }));
+  }
 
 
 return (
@@ -58,12 +52,12 @@ return (
   <h1> HomePage </h1>
 
   <div>
-  <FavoritePage /> 
+  <FavoriteForm /> 
   <NewDestinationForm addDestination={addDestination} />
   </div>
 
   {
-  destinations.map(destination => <CityList key={destination.id} destination={destination} />)
+  destinations.map(destination => <CityList key={destination.id} destination={destination} updateFavorite={updateFavorite} />)
   }
   
   </>
