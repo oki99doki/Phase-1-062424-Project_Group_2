@@ -4,9 +4,10 @@ function CityCard({ destination }) {
   const toggleFavorite = () => {
     setFavorite((prev) => !prev);
   };
+  
   useEffect(() => {
     fetch(`http://localhost:4000/places/${destination.id}`, {
-      method: "Patch",
+      method: "PATCH",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ favorite }),
     })

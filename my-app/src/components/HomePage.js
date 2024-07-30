@@ -32,6 +32,20 @@ useEffect(() => {
     setDestination([...destinations, newDestination])
   }
 
+      //create cb fxn for citycards to render on FavPage
+  function favoritedCity(updateFavCity) {
+    
+    const updateFavCityArray = destinations.map((destination) => {
+      if(destination.id === updateFavCity.id){
+        return updateFavCity;
+      }else {
+        return destination
+      }
+    });
+    setDestination(updateFavCityArray) 
+    }
+
+
 
 
 
@@ -44,7 +58,7 @@ return (
   <h1> HomePage </h1>
 
   <div>
-  <FavoriteForm /> 
+  <FavoritePage /> 
   <NewDestinationForm addDestination={addDestination} />
   </div>
 
