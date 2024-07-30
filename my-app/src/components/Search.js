@@ -1,6 +1,18 @@
-import React, { useState} from "react";
+import React from "react";
 
-function Search({ updatedSearch }) {
-    const [form, setForm] = useState("");
-
+function Search({ search, updateSearch }) {
+  return (
+    <div className="searchbar">
+      <label htmlFor="search">Search Destinations:</label>
+      <input
+        value={search}
+        type="text"
+        id="search"
+        placeholder="Type a name to search..."
+        onChange={(e) => updateSearch(e.target.value)}
+      />
+    </div>
+  );
 }
+
+export default Search;

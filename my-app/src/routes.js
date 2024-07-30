@@ -1,7 +1,7 @@
 import App from './App';
 import HomePage from './components/HomePage';
 import FavoritePage from './components/FavoritePage';
-import NewDestination from './components/NewDestination';
+import NewDestination from "./components/NewDestination"
 
 
 const routes = [
@@ -22,5 +22,6 @@ const routes = [
     }]
     }
 ];
+
 
 export default routes

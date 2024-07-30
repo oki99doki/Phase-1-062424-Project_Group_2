@@ -3,11 +3,12 @@ import Header from "./Header";
 import FavoritePage from "./FavoritePage";
 import NewDestinationForm from "./NewDestinationForm";
 import CityList from "./CityList";
+import Search from "./Search";
 
 function HomePage() {
 
 const [destinations, setDestination] = useState([]);
-const [searchPlaces, setSearchplaces] = useState("");
+const [search, setSearch] = useState("");
 const [favorites, setFavorites] = useState([]);
 
 useEffect(() => {
@@ -26,6 +27,19 @@ useEffect(() => {
   const addDestination = (newDestination) => {
     setDestination([...destinations, newDestination])
   }
+
+  const updateSearch = (newSearch) => setSearch(newSearch);
+
+  const filteredDestinations = destinations.filter((curDestination) => {
+
+    console.log(curDestination)
+    
+    return (
+      curDestination["city-name"].toLowerCase().includes(search.toLowerCase()) ||
+      curDestination["country-name"].toLowerCase().includes(search.toLowerCase())
+    );
+
+  });
 
   function updateFavorite(updatedDestination) {
     setDestination(destinations.map(prevDestination => {
@@ -47,14 +61,13 @@ return (
   <h1> HomePage </h1>
 
   <div>
-   
   <NewDestinationForm addDestination={addDestination} />
-  {/* <CityList destination={destination} updateFavorite={updateFavorite} /> */}
   {
   destinations.map(destination => <CityList key={destination.id} destination={destination} updateFavorite={updateFavorite} />)
   }
   <FavoritePage />
-</div>
+  </div>
+
   
   </>
 
