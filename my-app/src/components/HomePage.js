@@ -10,24 +10,30 @@ function HomePage() {
   //const [searchDestination, setSearch] = useState("")
   const [search, setSearch] = useState("");
 
-  useEffect(() => {
-    fetch("http://localhost:4000/places")
-      .then((res) => res.json())
-      .then((data) => setDestination(data));
-  }, []);
+useEffect(() => {
+    fetch('http://localhost:4000/places')
+    .then(res => {
+      if(res.ok) {
+        return res.json()
+      } else {
+         throw Error ('Could not fetch the data from promise')
+      }
+    })
+    .then(data => setDestination(data))
+    .catch(err => console.error('Was unable to reach the server for GET Request'))
+  }, [])
+
 
   // const addPlaces = (newPlaces) => {
   //   setSearchplaces([...destinations, newPlaces])
   // };
 
   const addDestination = (newDestination) => {
-    setDestination([...destinations, newDestination]);
-  };
+    setDestination([...destinations, newDestination])
+  }
 
   const updateSearch = (newSearch) => setSearch(newSearch);
 
-  
-  
   const filteredDestinations = destinations.filter((curDestination) => {
 
     console.log(curDestination)
@@ -38,9 +44,20 @@ function HomePage() {
     );
 
   });
-  
+
+  function updateFavorite(updatedDestination) {
+    setDestination(destinations.map(prevDestination => {
+      if (updatedDestination.id === prevDestination.id) {
+        return { ...prevDestination, favorite: updatedDestination.favorite };
+      } else {
+        return prevDestination;
+      }
+    }));
+  }
+
 
 return (
+  <>
   <div>
     <header>
       <Header />
@@ -58,7 +75,14 @@ return (
 
     </div>
   </div>
-);
+
+  {
+  destinations.map(destination => <CityList key={destination.id} destination={destination} updateFavorite={updateFavorite} />)
+  }
+  
+  </>
+
+)
 }
 
 export default HomePage;

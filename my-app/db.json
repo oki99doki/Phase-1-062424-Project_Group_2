@@ -5,14 +5,14 @@
       "country-name": "Japan",
       "city-name": "Tokyo",
       "image": "https://media.nomadicmatt.com/2024/tokyothings.jpeg",
-      "favorite": "false"
+      "favorite": false
     },
     {
       "id": "2",
       "country-name": "Thailand",
       "city-name": "Phucket",
       "image": "https://touringhighlights.com/wp-content/uploads/2020/09/Phang-Nga-Bay-Phuket-Thailand.jpg",
-      "favorite": "false"
+      "favorite": false
     },
     {
       "id": "3",
@@ -39,7 +39,7 @@
       "id": "7",
       "country-name": "Panama",
       "city-name": "Panama City",
-      "image": "https://traveler.marriott.com/wp-content/uploads/2016/11/Panama_MMJ11_PanamaCity.jpg",
+      "image": "https://theplanetd.com/images/panama-city-view.jpg",
       "favorite": "false"
     },
     {
@@ -349,13 +349,6 @@
       "city-name": "Detroit",
       "image": "https://www.michigan.org/sites/default/files/styles/large/public/2022-04/dtw_22_ss_camp_Week1_Visit_Detroit_Growing_Skyline_S_Ferguson.jpg?itok=9-3lMdtM",
       "favorite": "false"
-    },
-    {
-      "id": "0637",
-      "country-name": "Place New",
-      "city-name": "Spain",
-      "image": "dsdfsw",
-      "false": ""
     }
   ]
 }
