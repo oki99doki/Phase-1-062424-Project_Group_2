@@ -34,8 +34,6 @@ function HomePage() {
     
     return (
       curDestination["city-name"].toLowerCase().includes(search.toLowerCase()) ||
-      curDestination["city-name"].toLowerCase().includes(search.toLowerCase()) ||
-      curDestination["country-name"].toLowerCase().includes(search.toLowerCase()) ||
       curDestination["country-name"].toLowerCase().includes(search.toLowerCase())
     );
 
@@ -54,7 +52,7 @@ return (
       <FavoriteForm />
       <NewDestinationForm addDestination={addDestination} />
 
-      {destinations.map((destination) => (
+      {filteredDestinations.map((destination) => (
         <CityList key={destination.id} destination={destination} />
       ))}
 
