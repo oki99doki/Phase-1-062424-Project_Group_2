@@ -1,31 +1,18 @@
 import { useEffect, useState } from "react";
 import Header from "./Header";
 import FavoriteForm from "./FavoriteForm";
-import NewDestinationForm from "./NewDestinationForm";
+import NewDestination from "./NewDestination";
 import CityList from "./CityList";
 
 function HomePage() {
 
 const [destinations, setDestination] = useState([])
-const [searchPlaces, setSearchplaces] = useState("")
 
 useEffect(() => {
     fetch('http://localhost:4000/places')
     .then(res => res.json())
     .then(data => setDestination(data))
   }, [])
-
-
-  // const addPlaces = (newPlaces) => {
-  //   setSearchplaces([...destinations, newPlaces])
-  // };
-
-  const addDestination = (newDestination) => {
-    setDestination([...destinations, newDestination])
-  }
-
-
-
 
 return (
   <>
@@ -37,7 +24,7 @@ return (
 
   <div>
   <FavoriteForm /> 
-  <NewDestinationForm addDestination={addDestination} />
+  {/* <NewDestinationForm addPlaces={addPlaces} /> */}
   </div>
 
   {
