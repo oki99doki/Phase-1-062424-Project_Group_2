@@ -8,7 +8,7 @@ function NewDestinationForm({ addDestination }) {
 		"country-name": "",
 		"city-name": "",
 		image: "",
-		"false": ""
+		"favorite": ""
 	});
 
 	const handleChange = (e) => {
@@ -63,7 +63,7 @@ function NewDestinationForm({ addDestination }) {
 				/>
 				<input
 					onChange={(e) => handleChange(e)}
-					value={form["false"]}
+					value={form["favorite"]}
 					type="text"
 					name="Favorite"
 					placeholder="False"

@@ -26,6 +26,7 @@ function CityCard({ destination }) {
     <>
 
       <img src={destination.image}/>
+      <div>
       <h3>Country Name: {destination["country-name"]}</h3>
       <h4>City Name: {destination["city-name"]}</h4>
       {favorite ? (
@@ -35,6 +36,7 @@ function CityCard({ destination }) {
       ) : (
         <button onClick={toggleFavorite}>unfavorite</button>
       )}
+      </div>
     </>
   );
 }
