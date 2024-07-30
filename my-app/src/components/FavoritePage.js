@@ -1,77 +1,81 @@
-import React, { useState } from "react";
-import CityCard from "./CityCard";
+import React, { useEffect, useState } from 'react';
+import CityCard from './CityCard';
 
-//favorites list reset when page re-renders
-//use .some()
-//The .some() method in JavaScript is used to test whether at least one element in an array passes a given condition. 
-// It returns a boolean value: true if at least one element satisfies the condition, and false otherwise.
+function FavoritesPage({ destination }) {
+  const [favorites, setFavorites] = useState([]);
 
-
-function FavoritePage() {
-    //{ destinations, favorites, onFavoriteCity }
-    
-    const [favorites, setFavorites] = useState([]);
-
-    const handleFavoriteToggle = (city) => {
-        if (favorites.some(fav => fav.id === city.id)) {
-          // Remove from favorites
-          const newFavorites = favorites.filter(fav => fav.id !== city.id);
-          setFavorites(newFavorites);
+  useEffect(() => {
+    // Fetch the list of favorite places from the server
+    fetch('http://localhost:4000/places')
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
         } else {
-          // Add to favorites
-          const newFavorites = [...favorites, city];
-          setFavorites(newFavorites);
+          throw Error('Failed to fetch favorites');
         }
-      };
-    
-      return (
-        <div>
-          <h1>Favorites</h1>
-          {favorites.length === 0 ? (
-            <p>No favorites added yet.</p>
+      })
+      .then((data) => {
+        // Filter out the favorite places
+        const favoritePlaces = data.filter(place => place.favorite);
+        setFavorites(favoritePlaces);
+      })
+      .catch((err) => console.error('Error:', err));
+  }, []);
+
+  const handleDelete = () => {
+    fetch(`http://localhost:4000/places/${destination.id}`, {
+      method: "DELETE",
+    })
+      .then((res) => {
+        if (res.ok) {
+          deleteFavorite(destination.id);
+        } else {
+          throw Error("DELETE failed");
+        }
+      })
+      .catch((err) => console.error("couldnt reach server"));
+  };
+
+
+  const updateFavorite = (updatedPlace) => {
+    // Update the favorites state with the modified place
+    setFavorites((prevFavorites) =>
+      prevFavorites.map((place) =>
+        place.id === updatedPlace.id ? updatedPlace : place
+      )
+    );
+  };
+
+  const deleteFavorite = (id) => {
+    // Remove the deleted place from the state
+    setFavorites((prevFavorites) =>
+      prevFavorites.filter((place) => place.id !== id)
+    );
+  };
+
+  return (
+    <div>
+      <h1>Favorite Places</h1>
+      <ul>
+        {favorites.length === 0 ? (
+          <p>No favorite places added yet.</p>
           ) : (
-            <div className="city-cards">
-              {favorites.map((city) => (
-                <CityCard
-                  key={city.id}
-                  city={city}
-                  onFavoriteToggle={handleFavoriteToggle}
-                  isFavorite={true} // Always true for items in the favorites list
-                />
-              ))}
-            </div>
-          )}
-        </div>
-      );
-    };
-    
+          favorites.map((place) => (
+            <CityCard
+              key={place.id}
+              destination={place}
+              updateFavorite={updateFavorite}
+              deleteFavorite={deleteFavorite}
+              button onClick={handleDelete}
+            />
+                                   
+          ))
+        )}
+        <button onClick={handleDelete}>Delete</button>
+      </ul>
+      
+    </div>
+  );
+}
 
-
-
-
-    // const favoriteCities = destinations.filter((destination) => (destination.favorite))   
-
-    // const favoriteCityCard = favoriteCities.map((destination) =>{
-    //     <CityCard
-    //         key={destination.id}
-    //         destination={destination}
-    //         onFavoriteCity={onFavoriteCity} 
-    //     />
-    // })
-
-
-//     return (
-//         <div>
-//             {/* <div> create css */}
-//                 <h2 className="favorite-city-header">Favorite Destinations</h2>
-//             <div>
-//                 {/* <ul className="favorites-container">{favoriteCityCard}</ul> */}
-//             </div>
-            
-        
-//         </div>
-//     );
-// };
-
-
-export default FavoritePage; 
+export default FavoritesPage;

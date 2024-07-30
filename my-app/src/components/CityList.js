@@ -2,14 +2,16 @@ import React from "react";
 import CityCard from "./CityCard";
 
 
-function CityList({destination, updateFavorite}) {
-
+function CityList({ destination, updateFavorite }) {
+    // {
+    //     destinations.map(destination => <CityList key={destination.id} destination={destination} updateFavorite={updateFavorite} />)
+    //     }
 
 
     return(
         <>
             <div>
-                <CityCard destination={destination} updateFavorite={updateFavorite}/>
+                <CityCard key={destination.id} destination={destination} updateFavorite={updateFavorite}/>
             </div>
         
         

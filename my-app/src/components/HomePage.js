@@ -23,11 +23,6 @@ useEffect(() => {
     .catch(err => console.error('Was unable to reach the server for GET Request'))
   }, [])
 
-
-  // const addPlaces = (newPlaces) => {
-  //   setSearchplaces([...destinations, newPlaces])
-  // };
-
   const addDestination = (newDestination) => {
     setDestination([...destinations, newDestination])
   }
@@ -52,13 +47,14 @@ return (
   <h1> HomePage </h1>
 
   <div>
-  <FavoriteForm /> 
+   
   <NewDestinationForm addDestination={addDestination} />
-  </div>
-
+  {/* <CityList destination={destination} updateFavorite={updateFavorite} /> */}
   {
   destinations.map(destination => <CityList key={destination.id} destination={destination} updateFavorite={updateFavorite} />)
   }
+  <FavoritePage />
+</div>
   
   </>
 
