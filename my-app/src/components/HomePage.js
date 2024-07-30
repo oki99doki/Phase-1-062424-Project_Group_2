@@ -24,21 +24,15 @@ useEffect(() => {
   }, [])
 
 
-  const addPlaces = (newPlaces) => {
-    setSearchplaces([...destinations, newPlaces])
-  };
+  // const addPlaces = (newPlaces) => {
+  //   setSearchplaces([...destinations, newPlaces])
+  // };
 
-  //create cb fxn for citycards to render on FavPage
-  // function favoritedCity(updateFavCity) {
-  //   const updateFavCityArray = destinations.map((destination) => {
-  //     if(destination.id === updateFavCity.id){
-  //       return updateFavCity;
-  //     }else {
-  //       return destination
-  //     }
-  //   });
-  //   setDestination(updateFavCityArray) 
-  // }
+  const addDestination = (newDestination) => {
+    setDestination([...destinations, newDestination])
+  }
+
+
 
 
 return (
@@ -50,10 +44,8 @@ return (
   <h1> HomePage </h1>
 
   <div>
-  {/* <FavoritePage favorites={favorites} destinations={destinations} onFavoriteCity={favoritedCity} /> */}
-  // <NewDestinationForm addPlaces={addPlaces}/>
-  {/* // <Search setSearch={setSearchplaces}/> */}
-  {/* <CityList destinations={destinations} onFavoriteCity={favoritedCity} /> */}
+  <FavoriteForm /> 
+  <NewDestinationForm addDestination={addDestination} />
   </div>
 
   {
