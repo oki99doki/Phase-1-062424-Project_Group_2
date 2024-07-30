@@ -23,9 +23,13 @@ useEffect(() => {
   }, [])
 
 
-  const addPlaces = (newPlaces) => {
-    setSearchplaces([...destinations, newPlaces])
-  };
+  // const addPlaces = (newPlaces) => {
+  //   setSearchplaces([...destinations, newPlaces])
+  // };
+
+  const addDestination = (newDestination) => {
+    setDestination([...destinations, newDestination])
+  }
 
   function updateFavorite(updatedDestination) {
     setDestination(destinations.map(prevDestination => {
@@ -48,7 +52,7 @@ return (
 
   <div>
   <FavoriteForm /> 
-  <NewDestinationForm addPlaces={addPlaces} />
+  <NewDestinationForm addDestination={addDestination} />
   </div>
 
   {
