@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-function CityCard({ destination, updateFavorite, deleteFavorite}) {
+function CityCard({ destination, updateFavorite, deleteFavorite, showDeleteButton, hideFavoriteButton}) {
   const [favorite, setFavorite] = useState(destination.favorite);
 
   const toggleFavorite = () => {
@@ -26,33 +26,40 @@ function CityCard({ destination, updateFavorite, deleteFavorite}) {
       .catch((err) => console.error("couldnt reach server"));
   }, [favorite]);
 
-  const handleDelete = () => {
-    fetch(`http://localhost:4000/places/${destination.id}`, {
-      method: "DELETE",
-    })
-      .then((res) => {
-        if (res.ok) {
-          deleteFavorite(destination.id);
-        } else {
-          throw Error("DELETE failed");
-        }
-      })
-      .catch((err) => console.error("couldnt reach server"));
-  };
+  //this code was removing the destination from the server. no DELETE request to the server, just update fav status of destination needed
+  // const handleDelete = () => {
+  //   fetch(`http://localhost:4000/places/${destination.id}`, {
+  //     method: "DELETE",
+  //   })
+  //     .then((res) => {
+  //       if (res.ok) {
+  //         deleteFavorite(destination.id);
+  //       } else {
+  //         throw Error("DELETE failed");
+  //       }
+  //     })
+  //     .catch((err) => console.error("couldnt reach server"));
+  // };
+
+  const removeFromFavorites = () => {
+    deleteFavorite(destination.id);
+  }; 
  
   return (
     <li>
       <img src={destination.image} alt={`${destination["city-name"]}`}  />
       <h3>Country Name: {destination["country-name"]}</h3>
       <h4>City Name: {destination["city-name"]}</h4>
-      {favorite ? (
-        <button className="favorite" onClick={toggleFavorite}>Favorite</button>
-      ) : (
-        <button onClick={toggleFavorite}>Unfavorite</button>
+        {!hideFavoriteButton && (
+        favorite ? (
+          <button className="favorite" onClick={toggleFavorite}>Favorite</button>
+        ) : (
+          <button onClick={toggleFavorite}>Unfavorite</button>
+        )
       )}
-        <button onClick={handleDelete}>Delete</button>
-      
-
+      {showDeleteButton && (
+        <button onClick={removeFromFavorites}>Remove from Favorites</button>
+      )}
     </li>
   );
 }

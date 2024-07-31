@@ -16,27 +16,21 @@ function NewDestination() {
 
     return (
         <>
-            <div>
-            <NavLink to={'/'} className="button">
-            Back to Homepage
-        </NavLink>
-        <NavLink to={'/FavoritePage'} className="button">
-            Favorites
-        </NavLink>
-                <NewDestinationForm addPlaces={addPlaces} />
-
-            </div>
-            <div>
-
-                {/* Render the list of places to ensure they are being added correctly */}
-                <ul>
-                    {places.map((place, id) => (
-                        <li key={id}>{place["city-name"]}, {place["country-name"]}, 
-                        <img src={place.image}/>
-                        </li>
-                    ))}
-                </ul>
-            </div>
+        <div>
+            <NavLink to={'/'} className="button">Back to Homepage</NavLink>
+            <NavLink to={'/FavoritePage'} className="button">Favorites</NavLink>
+            <NewDestinationForm addPlaces={addPlaces} />
+        </div>
+        <div>
+        {/* Render the list of places to ensure they are being added correctly */}
+            <ul>
+                {places.map((place, id) => (
+                <li key={id}>{place["city-name"]}, {place["country-name"]}, 
+                <img src={place.image}/>
+                </li>
+                ))}
+            </ul>
+        </div>
         </>
     );
 }

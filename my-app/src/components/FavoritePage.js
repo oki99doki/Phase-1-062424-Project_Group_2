@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import CityCard from './CityCard';
+import { NavLink } from 'react-router-dom';
 
 function FavoritesPage({ destination }) {
   const [favorites, setFavorites] = useState([]);
@@ -22,22 +23,7 @@ function FavoritesPage({ destination }) {
       .catch((err) => console.error('Error:', err));
   }, []);
 
-  const handleDelete = () => {
-    fetch(`http://localhost:4000/places/${destination.id}`, {
-      method: "DELETE",
-    })
-      .then((res) => {
-        if (res.ok) {
-          deleteFavorite(destination.id);
-        } else {
-          throw Error("DELETE failed");
-        }
-      })
-      .catch((err) => console.error("couldnt reach server"));
-  };
-
-
-  const updateFavorite = (updatedPlace) => {
+    const updateFavorite = (updatedPlace) => {
     // Update the favorites state with the modified place
     setFavorites((prevFavorites) =>
       prevFavorites.map((place) =>
@@ -55,7 +41,7 @@ function FavoritesPage({ destination }) {
 
   return (
     <div>
-      <h1>Favorite Places</h1>
+      <h1>Favorite Destinations</h1>
       <ul>
         {favorites.length === 0 ? (
           <p>No favorite places added yet.</p>
@@ -66,16 +52,18 @@ function FavoritesPage({ destination }) {
               destination={place}
               updateFavorite={updateFavorite}
               deleteFavorite={deleteFavorite}
-              button onClick={handleDelete}
+              showDeleteButton={true}
+              hideFavoriteButton={true} 
             />
-                                   
           ))
         )}
-        <button onClick={handleDelete}>Delete</button>
       </ul>
-      
+      <NavLink to="/">Go Back to Homepage</NavLink>  
     </div>
   );
+
 }
+
+
 
 export default FavoritesPage;

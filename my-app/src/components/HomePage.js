@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 import Header from "./Header";
-import FavoritePage from "./FavoritePage";
 import NewDestinationForm from "./NewDestinationForm";
 import CityList from "./CityList";
 import Search from "./Search";
+import { NavLink } from "react-router-dom";
 
 function HomePage() {
 
 const [destinations, setDestination] = useState([]);
 const [search, setSearch] = useState("");
-const [favorites, setFavorites] = useState([]);
+// const [favorites, setFavorites] = useState([]);
 
 useEffect(() => {
     fetch('http://localhost:4000/places')
@@ -61,11 +61,11 @@ return (
   <h1> HomePage </h1>
 
   <div>
+  <Search search={search} updateSearch={updateSearch} />
   <NewDestinationForm addDestination={addDestination} />
-  {
-  destinations.map(destination => <CityList key={destination.id} destination={destination} updateFavorite={updateFavorite} />)
-  }
-  <FavoritePage />
+  <CityList destinations={filteredDestinations} updateFavorite={updateFavorite} />
+  <NavLink to="/favorites">Go to Favorites</NavLink>
+
   </div>
 
   
