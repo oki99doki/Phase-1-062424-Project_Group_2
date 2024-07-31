@@ -34,12 +34,10 @@ function HomePage() {
     console.log(curDestination);
 
     return (
-      curDestination["city-name"]
-        .toLowerCase()
-        .includes(search.toLowerCase()) ||
-      curDestination["country-name"]
-        .toLowerCase()
-        .includes(search.toLowerCase())
+      curDestination["city-name"].toLowerCase().includes(search.toLowerCase()) ||
+      curDestination["city-name"].toLowerCase().includes(search.toLowerCase()) ||
+      curDestination["country-name"].toLowerCase().includes(search.toLowerCase()) ||
+      curDestination["country-name"].toLowerCase().includes(search.toLowerCase())
     );
   });
 
