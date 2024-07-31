@@ -3,8 +3,6 @@ import NewDestinationForm from "./NewDestinationForm";
 import { NavLink } from 'react-router-dom'
 // import CSS from "./NewDestination.css";
 
-
-
 function NewDestination() {
     // Initialize places as an empty array
     const [places, setPlaces] = useState([]);
@@ -33,6 +31,6 @@ function NewDestination() {
         </div>
         </>
     );
-}
+};
 
 export default NewDestination;

@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import Header from "./Header";
-import NewDestinationForm from "./NewDestinationForm";
+import NewDestination from "./NewDestination";
 import CityList from "./CityList";
+import Search from "./Search";
 import Search from "./Search";
 import { NavLink } from "react-router-dom";
 
