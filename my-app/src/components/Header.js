@@ -1,24 +1,27 @@
 import React from "react";
-import { NavLink } from 'react-router-dom'
+import { NavLink } from "react-router-dom";
 
 function Header() {
-
-
-    return (
-        <header>
-        <NavLink to={'/'} className="button">
-            Home 
+  return (
+    <header className="header">
+      <a className="button">
+        <NavLink to={"/"} className="button">
+          Home
         </NavLink>
+      </a>
 
-        <NavLink to={'/FavoritePage'} className="button">
-          Favorite Page
+      <a className="button">
+        <NavLink to={"/FavoritePage"} className="button">
+          Favorite 
         </NavLink>
+      </a>
 
-        <NavLink to={'/NewDestination'} className="button">
-            NewDestination
+      <a className="button">
+        <NavLink to={"/NewDestination"} className="button">
+          NewDestination
         </NavLink>
-        </header>
-
-    );
+      </a>
+    </header>
+  );
 }
 export default Header;
