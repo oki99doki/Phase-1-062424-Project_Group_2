@@ -40,6 +40,8 @@ useEffect(() => {
     
     return (
       curDestination["city-name"].toLowerCase().includes(search.toLowerCase()) ||
+      curDestination["city-name"].toLowerCase().includes(search.toLowerCase()) ||
+      curDestination["country-name"].toLowerCase().includes(search.toLowerCase()) ||
       curDestination["country-name"].toLowerCase().includes(search.toLowerCase())
     );
 
@@ -69,7 +71,7 @@ return (
       <FavoriteForm />
       <NewDestinationForm addDestination={addDestination} />
 
-      {filteredDestinations.map((destination) => (
+      {destinations.map((destination) => (
         <CityList key={destination.id} destination={destination} />
       ))}
 
