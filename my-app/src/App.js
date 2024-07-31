@@ -1,25 +1,25 @@
-// import { Outlet } from 'react-router-dom'
-// import React from 'react';
-// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-// import HomePage from './HomePage';
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+// import { Route, Routes } from 'react-router-dom';
+// import HomePage from './components/HomePage';
 // import NewDestination from './components/NewDestination';
-// import FavoritePage from './FavoritePage';
+// import FavoritePage from './components/FavoritePage';
 
-// function App() {
-//   return (
-//     <div>
-//         <Outlet />
-//     <Router>
-//         <Switch>
-//             <Route exact path="/" component={HomePage} />
-//             <Route path="/newdestination" component={NewDestination} />
-//             <Route path="/favorites" component={FavoritePage} />
-//         </Switch>
-//     </Router>
-//     </div>
-//   );
-// }
+//work on this tomorrow
+function App() {
+  return (
+    <div>
+      <Outlet />
+{/*     <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/newdestination" element={<NewDestination />} />
+            <Route path="/favorites" element={<FavoritePage />} />
+        </Routes> */}
+    </div>
+   
+  );
+}
 
-// export default App;
+export default App;
 
 //work on this tomorrow

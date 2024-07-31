@@ -45,17 +45,34 @@ function CityCard({ destination, updateFavorite, deleteFavorite, showDeleteButto
     deleteFavorite(destination.id);
   }; 
  
+  // return (
+  //   <li>
+  //     <img src={destination.image} alt={`${destination["city-name"]}`}  />
+  //     <h3>Country Name: {destination["country-name"]}</h3>
+  //     <h4>City Name: {destination["city-name"]}</h4>
+  //       {!hideFavoriteButton && (
+  //       favorite ? (
+  //         <button className="favorite" onClick={toggleFavorite}>Favorite</button>
+  //       ) : (
+  //         <button onClick={toggleFavorite}>Unfavorite</button>
+  //       )
+  //     )}
+  //     {showDeleteButton && (
+  //       <button onClick={removeFromFavorites}>Remove from Favorites</button>
+  //     )}
+  //   </li>
+  // );
+
+  //ask Sebastian if he likes this code for the toggle 
   return (
     <li>
-      <img src={destination.image} alt={`${destination["city-name"]}`}  />
+      <img src={destination.image} alt={`${destination["city-name"]}`} />
       <h3>Country Name: {destination["country-name"]}</h3>
       <h4>City Name: {destination["city-name"]}</h4>
-        {!hideFavoriteButton && (
-        favorite ? (
-          <button className="favorite" onClick={toggleFavorite}>Favorite</button>
-        ) : (
-          <button onClick={toggleFavorite}>Unfavorite</button>
-        )
+      {!hideFavoriteButton && (
+        <button className="favorite" onClick={toggleFavorite}>
+          {favorite ? "Remove from Favorites" : "Add to Favorites"}
+        </button>
       )}
       {showDeleteButton && (
         <button onClick={removeFromFavorites}>Remove from Favorites</button>

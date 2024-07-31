@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import Header from "./Header";
-import NewDestination from "./NewDestination";
+import NewDestinationForm from "./NewDestinationForm";
 import CityList from "./CityList";
-import Search from "./Search";
 import Search from "./Search";
 import { NavLink } from "react-router-dom";
 
@@ -65,7 +64,7 @@ return (
   <Search search={search} updateSearch={updateSearch} />
   <NewDestinationForm addDestination={addDestination} />
   <CityList destinations={filteredDestinations} updateFavorite={updateFavorite} />
-  <NavLink to="/favorites">Go to Favorites</NavLink>
+  <NavLink to="/FavoritePage">Go to Favorites</NavLink>
 
   </div>
 

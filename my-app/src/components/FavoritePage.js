@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import CityCard from './CityCard';
 import { NavLink } from 'react-router-dom';
 
-function FavoritesPage({ destination }) {
+function FavoritePage({ destination }) {
   const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
@@ -66,4 +66,4 @@ function FavoritesPage({ destination }) {
 
 
 
-export default FavoritesPage;
+export default FavoritePage;
