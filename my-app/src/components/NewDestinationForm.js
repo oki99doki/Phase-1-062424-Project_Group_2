@@ -1,9 +1,10 @@
 import { useState } from "react";
+import HomePage from "./HomePage";
 
 //1. form state
 //2. align values with state
 //3. onChange
-function NewDestinationForm({ addDestination }) {
+function NewDestinationForm({ addPlaces }) {
 	const [form, setForm] = useState({
 		"country-name": "",
 		"city-name": "",
@@ -32,7 +33,7 @@ function NewDestinationForm({ addDestination }) {
           throw Error('post went wrong')
         }
       })
-      .then(data => addDestination(data))
+      .then(data => addPlaces(data))
       .catch(err => console.log('couldnt reach server'))
 	};
 
@@ -65,7 +66,7 @@ function NewDestinationForm({ addDestination }) {
 					onChange={(e) => handleChange(e)}
 					value={form["favorite"]}
 					type="text"
-					name="Favorite"
+					name="favorite"
 					placeholder="False"
 				/>
 				<button type="submit">Add Destination</button>
