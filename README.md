@@ -1,6 +1,34 @@
 # Phase-2-062424-Project_Group_1
 Phase 2 - Week 6 Group Project - Group 1
 
+## Getting Started
+To get a local copy up and running, follow these steps:
+
+#Front-end Installation
+
+1. Clone the repository:
+
+git clone git@github.com:oki99doki/Phase-2-Project.git
+
+2. Navigate to the front-end directory:
+
+cd Phase-2-Project/my-app
+
+3. Install npm packages:
+npm install -- save react-router-dom
+
+4. Running the Application
+Ensure you are in the root directory of the project.
+cd Phase-2-Project/my-app
+
+a. Start the JSON server to watch db.json on port 4000:
+npm run server
+
+json-server --watch db.json --port 4000
+
+b. Open another terminal and start the application:
+
+npm start
 
 ## Project Requirements
 - [ ] A one sentence description of your app
@@ -17,7 +45,6 @@ Phase 2 - Week 6 Group Project - Group 1
 ## Project Requirements (One Sentence Description)
 - [ ] An app where users can search for popular destinations and share their favorite places.
 
-
 ## Wireframe Screenshot
 - [ ] to be added (link)
 - [ ] ![image](/assets/wireframe_project_2.JPG)
@@ -32,13 +59,14 @@ Phase 2 - Week 6 Group Project - Group 1
 
 
 ## CRUD routes you will be using and where (GET and POST are required)
-- [ ] GET request -> 
-- [ ] POST request -> 
+- [ ] GET request -> Homepage component, Favorite Page component
+- [ ] POST request -> New Destination form component
+- [ ] PATCH request -> City Card component (2 PATCH req-- one to update favorites and one to remove from favorites list)
+- [ ] DELETE request -> City Card component
 
 
 ## What three or more React Router routes you will be using and what components they will be used for (include any params)
 ![image](https://github.com/user-attachments/assets/d6304df3-d8aa-44c8-8c8f-0e46acdd97b1)
-
 
 
 ## A component diagram detailing the purpose of each component (at least five components)
@@ -49,28 +77,15 @@ Phase 2 - Week 6 Group Project - Group 1
 
 ## DB.JSON
 Example below:
- {
-    "places": [
+{
+  "places": [
     {
-        "id": 1,
-        "country-name": "Japan",
-        "city-name": "Tokyo",
-        "image": "https://media.nomadicmatt.com/2024/tokyothings.jpeg"
-    },
-    {
-        "id": 2,
-        "country-name": "Thailand",
-        "city-name": "Phucket",
-        "image": "https://touringhighlights.com/wp-content/uploads/2020/09/Phang-Nga-Bay-Phuket-Thailand.jpg"
-    },
-    {
-        "id": 3,
-        "country-name": "Australia",
-        "city-name": "Brisbane",
-        "image": "https://content.r9cdn.net/rimg/dimg/97/d4/1dc3de6e-city-27249-163f5014ee8.jpg?crop=true&width=1020&height=498"
+      "id": "3",
+      "country-name": "Australia",
+      "city-name": "Brisbane",
+      "image": "https://content.r9cdn.net/rimg/dimg/97/d4/1dc3de6e-city-27249-163f5014ee8.jpg?crop=true&width=1020&height=498",
+      "favorite": false
     }
-    ]
- }
 
 
 ## Three Stretch Goals
