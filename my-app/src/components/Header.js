@@ -4,23 +4,17 @@ import { NavLink } from "react-router-dom";
 function Header() {
   return (
     <header className="header">
-      <a className="button">
-        <NavLink to={"/"} className="button">
-          Home
-        </NavLink>
-      </a>
+      <NavLink to={"/"} className="button">
+        Home
+      </NavLink>
 
-      <a className="button">
-        <NavLink to={"/FavoritePage"} className="button">
-          Favorite
-        </NavLink>
-      </a>
+      <NavLink to={"/FavoritePage"} className="button">
+        Favorite
+      </NavLink>
 
-      <a className="button">
-        <NavLink to={"/NewDestination"} className="button">
-          New Destination
-        </NavLink>
-      </a>
+      <NavLink to={"/NewDestination"} className="button">
+        New Destination
+      </NavLink>
     </header>
   );
 }
