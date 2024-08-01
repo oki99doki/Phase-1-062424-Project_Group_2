@@ -12,13 +12,13 @@ function Header() {
 
       <a className="button">
         <NavLink to={"/FavoritePage"} className="button">
-          Favorite 
+          Favorite
         </NavLink>
       </a>
 
       <a className="button">
         <NavLink to={"/NewDestination"} className="button">
-          NewDestination
+          New Destination
         </NavLink>
       </a>
     </header>

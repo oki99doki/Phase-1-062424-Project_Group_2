@@ -31,13 +31,13 @@ function HomePage() {
   const updateSearch = (newSearch) => setSearch(newSearch);
 
   const filteredDestinations = destinations.filter((curDestination) => {
-    console.log(curDestination);
-
     return (
-      curDestination["city-name"].toLowerCase().includes(search.toLowerCase()) ||
-      curDestination["city-name"].toLowerCase().includes(search.toLowerCase()) ||
-      curDestination["country-name"].toLowerCase().includes(search.toLowerCase()) ||
-      curDestination["country-name"].toLowerCase().includes(search.toLowerCase())
+      curDestination["city-name"]
+        .toLowerCase()
+        .includes(search.toLowerCase()) ||
+      curDestination["country-name"]
+        .toLowerCase()
+        .includes(search.toLowerCase())
     );
   });
 
@@ -53,22 +53,42 @@ function HomePage() {
     );
   }
 
+  const deleteDestination = (id) => {
+    setDestination(destinations.filter((destination) => destination.id !== id));
+  };
+
+  const deleteFromFavorites = (id) => {
+    setDestination(
+      destinations.map((destination) =>
+        destination.id === id
+          ? { ...destination, favorite: false }
+          : destination
+      )
+    );
+  };
+
   return (
     <>
-      <header>
+      {/* we don't need this since we added outlet to have header render on all pages */}
+      {/* <header>
         <Header />
-      </header>
-
-      <h1> HomePage </h1>
-
+      </header> */}
+      <h1>Popular Travel Destinations</h1>
       <div>
         <Search search={search} updateSearch={updateSearch} />
         <NewDestinationForm addDestination={addDestination} />
         <CityList
           destinations={filteredDestinations}
           updateFavorite={updateFavorite}
+          deleteDestination={deleteDestination}
+          deleteFromFavorites={deleteFromFavorites}
+          showDeleteButton={true}
+          hideFavoriteButton={false}
+          isFavoritePage={false}
         />
-        <NavLink to="/FavoritePage">Go to Favorites</NavLink>
+        {/* <NavLink to="/FavoritePage" className="button">Go to Favorites</NavLink>
+        <NavLink to="/NewDestination" className="button">Go to New Destination Form</NavLink>  */}
+        {/* we don't need this since we added outlet to have header render on all pages */}
       </div>
     </>
   );

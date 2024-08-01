@@ -15,12 +15,13 @@ function NewDestination() {
   return (
     <>
       <div>
-        <NavLink to={"/"} className="button">
+        {/* we don't need this since we added outlet to have header render on all pages */}
+        {/* <NavLink to={"/"} className="button">
           Back to Homepage
         </NavLink>
         <NavLink to={"/FavoritePage"} className="button">
           Favorites
-        </NavLink>
+        </NavLink> */}
         <NewDestinationForm addPlaces={addPlaces} />
       </div>
       <div>
@@ -33,6 +34,13 @@ function NewDestination() {
             </li>
           ))}
         </ul>
+        {/* <NavLink to={"/"} className="button">
+          Back to Homepage
+        </NavLink>
+        <NavLink to={"/FavoritePage"} className="button">
+          Favorites
+        </NavLink> */}
+        {/* we don't need this since we added outlet to have header render on all pages */}
       </div>
     </>
   );

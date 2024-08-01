@@ -62,7 +62,7 @@ function NewDestinationForm({ addPlaces }) {
           name="image"
           placeholder="Image URL"
         />
-        
+
         <button type="submit">Add Destination</button>
       </form>
     </div>

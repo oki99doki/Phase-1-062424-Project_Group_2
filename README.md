@@ -67,7 +67,9 @@ Example below:
         "country-name": "Australia",
         "city-name": "Brisbane",
         "image": "https://content.r9cdn.net/rimg/dimg/97/d4/1dc3de6e-city-27249-163f5014ee8.jpg?crop=true&width=1020&height=498"
-    },
+    }
+    ]
+ }
 
 
 ## Three Stretch Goals

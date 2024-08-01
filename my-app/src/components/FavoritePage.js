@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import CityCard from "./CityCard";
 import { NavLink } from "react-router-dom";
 
-function FavoritePage({ destination }) {
+function FavoritePage() {
   const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
@@ -32,8 +32,13 @@ function FavoritePage({ destination }) {
     );
   };
 
-  const deleteFavorite = (id) => {
-    // Remove the deleted place from the state
+  const deleteFromFavorites = (id) => {
+    setFavorites((prevFavorites) =>
+      prevFavorites.filter((place) => place.id !== id)
+    );
+  };
+
+  const deleteDestination = (id) => {
     setFavorites((prevFavorites) =>
       prevFavorites.filter((place) => place.id !== id)
     );
@@ -41,15 +46,6 @@ function FavoritePage({ destination }) {
 
   return (
     <div>
-      <header>
-        <NavLink to={"/"} className="button">
-          Back to Homepage
-        </NavLink>
-
-        <NavLink to={"/NewDestination"} className="button">
-          New Destination
-        </NavLink>
-      </header>
       <h1>Favorite Destinations</h1>
       <ul>
         {favorites.length === 0 ? (
@@ -60,14 +56,21 @@ function FavoritePage({ destination }) {
               key={place.id}
               destination={place}
               updateFavorite={updateFavorite}
-              deleteFavorite={deleteFavorite}
+              deleteFromFavorites={deleteFromFavorites}
+              deleteDestination={deleteDestination}
               showDeleteButton={true}
               hideFavoriteButton={true}
+              isFavoritePage={true}
             />
           ))
         )}
       </ul>
-      <NavLink to="/">Go Back to Homepage</NavLink>
+      {/* <NavLink to="/">Go Back to Homepage</NavLink>
+      <NavLink to={"/NewDestination"} className="button">
+        New Destination
+      </NavLink> */}
+
+      {/* we don't need this since we added outlet to have header render on all pages */}
     </div>
   );
 }
