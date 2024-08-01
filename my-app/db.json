@@ -19,14 +19,14 @@
       "country-name": "Guatemala",
       "city-name": "Panajachel",
       "image": "https://monacorona.com/wp-content/uploads/2023/01/lake-atitlan-hotels.jpg",
-      "favorite": "false"
+      "favorite": false
     },
     {
       "id": "7",
       "country-name": "Panama",
       "city-name": "Panama City",
       "image": "https://theplanetd.com/images/panama-city-view.jpg",
-      "favorite": "false"
+      "favorite": false
     },
     {
       "id": "8",
@@ -341,7 +341,7 @@
       "country-name": "Morroco",
       "city-name": "CasaBlanca",
       "image": "https://ratherbewandering.com/wp-content/uploads/2024/03/Depositphotos_215488556_L-1024x680.jpg",
-      "favorite": ""
+      "favorite": true
     }
   ]
 }
