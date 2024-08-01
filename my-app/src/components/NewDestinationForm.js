@@ -1,9 +1,5 @@
 import { useState } from "react";
-import HomePage from "./HomePage";
 
-//1. form state
-//2. align values with state
-//3. onChange
 function NewDestinationForm({ addPlaces }) {
   const [form, setForm] = useState({
     "country-name": "",
@@ -14,7 +10,7 @@ function NewDestinationForm({ addPlaces }) {
 
   const handleChange = (e) => {
     setForm({
-      ...form, //destructure current state
+      ...form,
       [e.target.name]: e.target.value,
     });
   };

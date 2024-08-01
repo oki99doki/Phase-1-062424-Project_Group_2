@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
-import Header from "./Header";
-import NewDestinationForm from "./NewDestinationForm";
 import CityList from "./CityList";
 import Search from "./Search";
-import { NavLink } from "react-router-dom";
 
 function HomePage() {
   const [destinations, setDestination] = useState([]);
@@ -23,10 +20,6 @@ function HomePage() {
         console.error("Was unable to reach the server for GET Request")
       );
   }, []);
-
-  const addDestination = (newDestination) => {
-    setDestination([...destinations, newDestination]);
-  };
 
   const updateSearch = (newSearch) => setSearch(newSearch);
 
@@ -69,10 +62,6 @@ function HomePage() {
 
   return (
     <>
-      {/* we don't need this since we added outlet to have header render on all pages */}
-      {/* <header>
-        <Header />
-      </header> */}
       <h1>Popular Travel Destinations</h1>
       <div>
         <Search search={search} updateSearch={updateSearch} />
@@ -85,9 +74,6 @@ function HomePage() {
           hideFavoriteButton={false}
           isFavoritePage={false}
         />
-        {/* <NavLink to="/FavoritePage" className="button">Go to Favorites</NavLink>
-        <NavLink to="/NewDestination" className="button">Go to New Destination Form</NavLink>  */}
-        {/* we don't need this since we added outlet to have header render on all pages */}
       </div>
     </>
   );
