@@ -4,31 +4,29 @@ Phase 2 - Week 6 Group Project - Group 1
 ## Getting Started
 To get a local copy up and running, follow these steps:
 
-#Front-end Installation
+**#Front-end Installation**
 
-1. Clone the repository:
+**1. Clone the repository:**
+      git clone git@github.com:oki99doki/Phase-2-Project.git
 
-git clone git@github.com:oki99doki/Phase-2-Project.git
+**2. Navigate to the front-end directory:**
+      cd Phase-2-Project/my-app
 
-2. Navigate to the front-end directory:
+**3. Install npm packages:**
+      npm install -- save react-router-dom
 
-cd Phase-2-Project/my-app
+**4. Running the Application**
+   Ensure you are in the root directory of the project.
+      cd Phase-2-Project/my-app
 
-3. Install npm packages:
-npm install -- save react-router-dom
+      a. Start the JSON server to watch db.json on port 4000:
+      npm run server
 
-4. Running the Application
-Ensure you are in the root directory of the project.
-cd Phase-2-Project/my-app
+      json-server --watch db.json --port 4000
 
-a. Start the JSON server to watch db.json on port 4000:
-npm run server
+      b. Open another terminal and start the application:
 
-json-server --watch db.json --port 4000
-
-b. Open another terminal and start the application:
-
-npm start
+      npm start
 
 ## Project Requirements
 - [ ] A one sentence description of your app
@@ -77,7 +75,8 @@ npm start
 
 ## DB.JSON
 Example below:
-{
+
+# {
   "places": [
     {
       "id": "3",
