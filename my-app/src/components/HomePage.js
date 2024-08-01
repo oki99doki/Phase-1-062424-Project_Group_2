@@ -63,7 +63,6 @@ function HomePage() {
 
       <div>
         <Search search={search} updateSearch={updateSearch} />
-        <NewDestinationForm addDestination={addDestination} />
         <CityList
           destinations={filteredDestinations}
           updateFavorite={updateFavorite}
