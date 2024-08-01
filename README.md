@@ -7,16 +7,20 @@ To get a local copy up and running, follow these steps:
 **#Front-end Installation**
 
 **1. Clone the repository:**
+      
       git clone git@github.com:oki99doki/Phase-2-Project.git
 
 **2. Navigate to the front-end directory:**
+      
       cd Phase-2-Project/my-app
 
 **3. Install npm packages:**
+      
       npm install -- save react-router-dom
 
 **4. Running the Application**
-   Ensure you are in the root directory of the project.
+   Ensure you are in the root directory of the project:
+      
       cd Phase-2-Project/my-app
 
       a. Start the JSON server to watch db.json on port 4000:
@@ -76,7 +80,7 @@ To get a local copy up and running, follow these steps:
 ## DB.JSON
 Example below:
 
-# {
+{
   "places": [
     {
       "id": "3",
