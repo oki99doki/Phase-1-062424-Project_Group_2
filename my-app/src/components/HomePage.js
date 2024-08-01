@@ -76,7 +76,6 @@ function HomePage() {
       <h1>Popular Travel Destinations</h1>
       <div>
         <Search search={search} updateSearch={updateSearch} />
-        <NewDestinationForm addDestination={addDestination} />
         <CityList
           destinations={filteredDestinations}
           updateFavorite={updateFavorite}
