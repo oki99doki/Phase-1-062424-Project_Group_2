@@ -67,7 +67,6 @@ return (
     <h1> HomePage </h1>
       <Search search={search} updateSearch={updateSearch} />
       <FavoriteForm />
-      <NewDestination addDestination={addDestination} />
 
       {filteredDestinations.map((destination) => (
         <CityList key={destination.id} destination={destination} />

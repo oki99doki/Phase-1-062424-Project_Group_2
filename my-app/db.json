@@ -349,6 +349,13 @@
       "city-name": "Detroit",
       "image": "https://www.michigan.org/sites/default/files/styles/large/public/2022-04/dtw_22_ss_camp_Week1_Visit_Detroit_Growing_Skyline_S_Ferguson.jpg?itok=9-3lMdtM",
       "favorite": "false"
+    },
+    {
+      "id": "de54",
+      "country-name": "China",
+      "city-name": "Hangzhou",
+      "image": "https://yingying.wordpress.ncsu.edu/files/2015/02/hangzhou7.jpg",
+      "favorite": "False"
     }
   ]
 }
