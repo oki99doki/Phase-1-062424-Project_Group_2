@@ -24,10 +24,6 @@ function HomePage() {
       );
   }, []);
 
-  const addDestination = (newDestination) => {
-    setDestination([...destinations, newDestination]);
-  };
-
   const updateSearch = (newSearch) => setSearch(newSearch);
 
   const filteredDestinations = destinations.filter((curDestination) => {
